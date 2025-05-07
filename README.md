@@ -28,7 +28,7 @@ Descripción del examen del año 2018.
 
 ---
 
-## Examen 2019
+## Examenes 2019
 ### Junio
 ### Septiembre
 Descripción del examen del año 2019.  
@@ -36,7 +36,7 @@ Descripción del examen del año 2019.
 
 ---
 
-## Examen 2020
+## Examenes 2020
 ### Junio
 ### Septiembre
 Descripción del examen del año 2020.  
@@ -44,7 +44,7 @@ Descripción del examen del año 2020.
 
 ---
 
-## Examen 2021
+## Examenes 2021
 ### Junio
 ### Septiembre
 Descripción del examen del año 2021.  
@@ -52,7 +52,7 @@ Descripción del examen del año 2021.
 
 ---
 
-## Examen 2022
+## Examenes 2022
 ### Junio
 ### Septiembre
 Descripción del examen del año 2022.  
