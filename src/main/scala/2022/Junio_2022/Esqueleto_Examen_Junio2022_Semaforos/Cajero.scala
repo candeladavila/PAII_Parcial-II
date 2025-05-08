@@ -38,7 +38,7 @@ class Cajero(mkt: Supermercado, permanente: Boolean) extends Thread {
     numCajeros.decrementAndGet()
   }
 
-  def getId(): Int = id
+  override def getId(): Long = id.toLong
 }
 
 object Cajero {
