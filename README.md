@@ -5,55 +5,44 @@ Este repositorio contiene enunciados, soluciones y recursos relacionados con ex�
 ---
 
 ## Examenes 2016
-### Junio
-### Septiembre
-📁 Carpeta: `/2016`
+- [ ] Junio
+- [ ] Septiembre
+
 
 ---
 
 ## Examenes 2017
-### Junio
-### Septiembre
-### Diciembre
-Descripción del examen del año 2017.  
-📁 Carpeta: `/2017`
+- [ ] Junio
+- [ ] Septiembre
+- [ ] Diciembre
 
 ---
 
 ## Examenes 2018
-### Junio
-### Septiembre
-Descripción del examen del año 2018.  
-📁 Carpeta: `/2018`
+- [ ] Junio
+- [ ] Septiembre
 
 ---
 
 ## Examenes 2019
-### Junio
-### Septiembre
-Descripción del examen del año 2019.  
-📁 Carpeta: `/2019`
+- [ ] Junio
+- [ ] Septiembre
 
 ---
 
 ## Examenes 2020
-### Junio
-### Septiembre
-Descripción del examen del año 2020.  
-📁 Carpeta: `/2020`
+- [ ] Junio
+- [ ] Septiembre
 
 ---
 
 ## Examenes 2021
-### Junio
-### Septiembre
-Descripción del examen del año 2021.  
-📁 Carpeta: `/2021`
+- [ ] Junio
+- [ ] Septiembre
 
 ---
 
 ## Examenes 2022
-### Junio
-### Septiembre
-Descripción del examen del año 2022.  
-📁 Carpeta: `/2022`
+- [x] Junio
+- [ ] Septiembre
+
