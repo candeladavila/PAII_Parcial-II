@@ -41,6 +41,7 @@ class SupermercadoSemaforos extends Supermercado {
   private var cierre = false //inicialmente no está cerrado
   private var nClientes = 0 //inicialmente no hay clientes
   private val mutex = new Semaphore(1) //inicialmente nadie intenta acceder a la variable -> semáforo abierto
+  private var esperaPrimeraVez = true
 
   //VARIABLES INICIALES
   private val permanente = new Cajero(this, true) // Crea el primer cajero, el permanente
@@ -66,60 +67,30 @@ class SupermercadoSemaforos extends Supermercado {
       mutex.release()
     }
   }
-/*
-  @throws[InterruptedException]
-  override def permanenteAtiendeCliente(id: Int): Boolean = {
-    var atiende = false
-    mutex.acquire()
-    if (!cierre){ //Supermercado abierto
-      if (nClientes >0){ //Caso 1: Abierto + clientes -> atiende
-        nClientes -= 1 //decrementa el número de clientes esperando
-        atiende = true
-        println(s"Cajero permanente atiende a un cliente. Quedan $nClientes clientes.")
-        mutex.release()
-      }else{ //Caso 2: Abierto + sin clientes -> espera
-        atiende = false //no atiende
-        println(s"Cajero permanente espera.")
-        mutex.release()
-      }
-    } else{ //Supermercado cerrado
-      if (nClientes >0){ //Caso 3: Cerrado + clientes
-        nClientes -= 1 //decrementa el número de clientes esperando
-        println(s"Cajero permanente atiende a un cliente. Quedan $nClientes clientes.")
-        mutex.release()
-      }else{ //Caso 4: Cerrado + sin clientes -> termina
-          atiende = false
-          println("Cajero permanente termina.")
-          mutex.release()
-      }
-    }
-    atiende
-  }
-*/
 
   @throws[InterruptedException]
   override def permanenteAtiendeCliente(id: Int): Boolean = {
     var atiende = false
     mutex.acquire()
-    if (nClientes > 0){       //HAY CLIENTES
+    if (nClientes > 0) { //hay clientes (independientemente de si está abierto o cerrado los atiende)
       nClientes -= 1
+      println(s"Cajero permanente atiende a un cliente. Quedan $nClientes clientes.")
+      esperaPrimeraVez = true //ponemos a true por si tiene que volver a esperar
+      mutex.release()
       atiende = true
-      println(s"Cajero permanente atiende. Hay $nClientes clientes.")
-      if (nClientes == 0) {
-        if(cierre) //era el último cliente cuando estaba cerrado
-          println("Cajero permanente termina")
-        else //era el último cliente cuando estaba abierto
-          println("Cajero espera")
+    }else{ //no hay clientes
+      if (cierre) { //está cerrado
+        println("Cajero permanente termina")
+        atiende = false
+        mutex.release()
+      }else{ //no está cerrado -> espera
+        if (esperaPrimeraVez == true) {
+          println("Cajero permanente espera")
+          esperaPrimeraVez = false //ya ha esperado 1 vez -> cambiamos a false para no volver a mostrar el mensaje
+        }
+        mutex.release() //para que puedan entrar nuevos clientes
         atiende = false
       }
-      mutex.release()
-    } else { //NO HAY CLIENTES
-      atiende = false
-      if (cierre) //no hay clientes y está cerrado
-        println("Cajero permanente termina")
-      else //no hay clientes y está abierto -> espera
-        println("Cajero espera")
-      mutex.release()
     }
     atiende
   }
