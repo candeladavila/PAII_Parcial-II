@@ -105,6 +105,7 @@ class SupermercadoSemaforos extends Supermercado {
       atiende = true
     else{
       atiende = false //no quedan clientes y entonces no atiende a nadie
+      println(s"Cajero $id se cierra porque no hay clientes.")
     }
     mutex.release() //libera el semáforo
     return atiende
