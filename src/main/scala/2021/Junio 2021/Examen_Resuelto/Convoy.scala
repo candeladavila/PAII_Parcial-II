@@ -48,12 +48,12 @@ class Convoy(tam: Int) {
   def seguirLider(id: Int): Unit = {
     salidaConvoy.acquire()
     mutex.acquire()
+    if (numFurgonetas == 10) { //están todas
+      println(s"** Furgoneta $idLider lider:  hemos llegado al destino **")
+    }
     numFurgonetas -=1
-    if (numFurgonetas > 1) {
-      if (numFurgonetas == tam-1) { //es la primera en salir
-        println(s"** Furgoneta $idLider lider:  hemos llegado al destino **")
-      }
-      println(s"Furgoneta $id abandona el convoy")
+    println(s"Furgoneta $id abandona el convoy")
+    if (numFurgonetas >=2) {
       salidaConvoy.release()
     } else {
       liberaLider.release()
