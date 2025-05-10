@@ -43,6 +43,6 @@ Este repositorio contiene enunciados, soluciones y recursos relacionados con ex�
 ---
 
 ## Examenes 2022
-- [x] Junio
+- [x] Junio (pendiente revisión método PermanenteAtiendeCliente)
 - [ ] Septiembre
 
