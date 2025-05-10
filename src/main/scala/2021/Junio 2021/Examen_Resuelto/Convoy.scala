@@ -1,24 +1,63 @@
+import java.util.concurrent._
+
 class Convoy(tam: Int) {
 
+  //VARIABLES
+  private var numFurgonetas = 0 //inicialmente no hay furgonetas en el convoy
+  private val mutex = new Semaphore(1) //semáforo para controlar numFurgonetas
+  private var idLider = -1 //inicialmente no hay ningún id asociado al líder
+  private val entradaConvoy = new Semaphore(1) //inicialmente no hay nadie en el convoy
+  private val salidaConvoy = new Semaphore (0) //inicialmente no se puede salir nadie
+  private val empiezaViaje = new Semaphore(0) //inicialmente no se inicia ningún viaje
+  private val liberaLider = new Semaphore(0) //inicialmente no se puede liberar al líder
+
   def unir(id: Int): Int = {
-    // TODO: Poner los mensajes donde corresponda
-    println(s"** Furgoneta $id lidera del convoy **")
-    println(s"Furgoneta $id seguidora")
-    0
+    entradaConvoy.acquire()
+    mutex.acquire()
+    numFurgonetas +=1
+    if (numFurgonetas == 1){ //si es la primera en llegar se convierte en lider
+      idLider = id
+      println(s"** Furgoneta $id lidera del convoy **")
+      entradaConvoy.release()
+    } else { //si no es la primera
+      println(s"Furgoneta $id seguidora")
+      if (numFurgonetas == tam) { //es la ultima
+        empiezaViaje.release()
+      } else{
+        entradaConvoy.release()
+      }
+    }
+    mutex.release()
+    idLider
   }
 
   def calcularRuta(id: Int): Unit = {
-    // TODO
+    empiezaViaje.acquire()
     println(s"** Furgoneta $id lider:  ruta calculada, nos ponemos en marcha **")
+    salidaConvoy.release()
   }
 
   def destino(id: Int): Unit = {
-    // TODO
+    liberaLider.acquire()
+    mutex.acquire()
+    numFurgonetas -=1 //libera al lider (numFurgonetas = 0)
     println(s"** Furgoneta $id lider abandona el convoy **")
+    entradaConvoy.release() //permite la entrada de nuevo a las furgonetas para formar un nuevo convoy
   }
 
   def seguirLider(id: Int): Unit = {
-    // TODO
-    println(s"Furgoneta $id abandona el convoy")
+    salidaConvoy.acquire()
+    mutex.acquire()
+    numFurgonetas -=1
+    if (numFurgonetas > 1) {
+      if (numFurgonetas == tam-1) { //es la primera en salir
+        println(s"** Furgoneta $idLider lider:  hemos llegado al destino **")
+      }
+      println(s"Furgoneta $id abandona el convoy")
+      salidaConvoy.release()
+    } else {
+      liberaLider.release()
+    }
+    mutex.release()
   }
 }
