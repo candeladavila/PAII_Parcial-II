@@ -1,3 +1,4 @@
+package Barco
 import scala.util.Random
 
 class Capitan(barca: Barca) extends Thread {

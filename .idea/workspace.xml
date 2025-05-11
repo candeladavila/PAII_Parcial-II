@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c2a7ce20-abb1-40fb-98f9-9ca9406b2f22" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Enunciado.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Esqueleto.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Examen Resuelto/Barca.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Examen Resuelto/Capitan.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Examen Resuelto/Pasajero.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Examen Resuelto/Principal.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/2022/Junio_2022/Examen_Resuelto/SupermercadoSemaforos.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/2022/Junio_2022/Examen_Resuelto/SupermercadoSemaforos.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-3.3.6/classes/2020/Junio 2020/Enunciado.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-3.3.6/classes/2020/Junio 2020/Esqueleto.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-3.3.6/classes/Supermercado/SupermercadoSemaforos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-3.3.6/classes/Supermercado/SupermercadoSemaforos.tasty" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="paii_parcial-ii" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;candeladavila&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/candeladavila/PAII_Parcial-II.git&quot;,
+    &quot;accountId&quot;: &quot;e189d92a-4349-40cd-8a2d-a307a1267b3c&quot;
+  }
+}</component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2wmOLdqVuO1LignJw6TW3x1Ko97" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Driver.executor": "Run",
+    "Application.Principal.executor": "Run",
+    "Application.PruebaConvoy.executor": "Run",
+    "Application.Supermercado.Driver.executor": "Run",
+    "Application.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/candeladavilamoreno/Documents/GitHub/PAII/PAII_Parcial-II/src/main/scala/2022/Junio_2022",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/scala/2022/Junio_2022" />
+      <recent name="$PROJECT_DIR$/src/main/scala/2022/Junio_2022/Esqueleto_Examen_Junio2022_Semaforos" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/scala/2022/Junio_2022" />
+      <recent name="$PROJECT_DIR$/src/main/scala/2022/Junio_2022/Esqueleto_Examen_Junio2022_Semaforos" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Driver" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Driver" />
+      <module name="Parcial_II" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="paii_parcial-ii_705" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="paii_parcial-ii_705" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Driver" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ScalaProjectSettings">
+    <option name="migrateConfigurationsNotificationShown" value="true" />
+    <option name="scala3DisclaimerShown" value="true" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2a7ce20-abb1-40fb-98f9-9ca9406b2f22" name="Changes" comment="" />
+      <created>1746643227997</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746643227997</updated>
+      <workItem from="1746643229292" duration="11000" />
+      <workItem from="1746643246824" duration="17720000" />
+      <workItem from="1746778085877" duration="24289000" />
+      <workItem from="1746899132886" duration="16719000" />
+      <workItem from="1746961574936" duration="692000" />
+      <workItem from="1746987214887" duration="2126000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

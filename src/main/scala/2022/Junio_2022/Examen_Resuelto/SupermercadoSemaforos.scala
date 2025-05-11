@@ -59,11 +59,11 @@ class SupermercadoSemaforos extends Supermercado {
       mutex.acquire()
       nClientes += 1
       println(s"Llega cliente $id. Hay $nClientes clientes.")
-      if (nClientes > 3 * Cajero.numCajerosActivos())
-       //Creamos un nuevo cajero
-       val ocasional = new Cajero(this, false) //Consultar constructor cajero para más información
-        println(s"Se crea un cajero nuevo ${Cajero.numCajerosActivos()-1}")
-        ocasional.start() //iniciamos la actividad del cajero
+      while (Cajero.numCajerosActivos() < (nClientes + 2) / 3) {
+        val ocasional = new Cajero(this, false)
+        ocasional.start()
+        println(s"Se crea un cajero nuevo ${Cajero.numCajerosActivos()}")
+      }
       mutex.release()
     }
   }
@@ -78,12 +78,12 @@ class SupermercadoSemaforos extends Supermercado {
       esperaPrimeraVez = true //ponemos a true por si tiene que volver a esperar
       mutex.release()
       atiende = true
-    }else{ //no hay clientes
+    } else{ //no hay clientes
       if (cierre) { //está cerrado
         println("Cajero permanente termina")
         atiende = false
         mutex.release()
-      }else{ //no está cerrado -> espera
+      } else{ //no está cerrado -> espera
         if (esperaPrimeraVez == true) {
           println("Cajero permanente espera")
           esperaPrimeraVez = false //ya ha esperado 1 vez -> cambiamos a false para no volver a mostrar el mensaje
@@ -99,15 +99,15 @@ class SupermercadoSemaforos extends Supermercado {
   override def ocasionalAtiendeCliente(id: Int): Boolean = {
     var atiende = false
     mutex.acquire() //accedemos al semáforo
-    if (nClientes > 0) //si aún quedan clientes
+    if (nClientes > 0) { //si aún quedan clientes
       nClientes -= 1 //atendemos al cliente
       println(s"Cajero $id atiende a un cliente. Quedan $nClientes clientes. ")
       atiende = true
-    else{
+    } else{
       atiende = false //no quedan clientes y entonces no atiende a nadie
       println(s"Cajero $id se cierra porque no hay clientes.")
     }
     mutex.release() //libera el semáforo
-    return atiende
+    atiende
   }
 }

@@ -1,3 +1,5 @@
+package Barco
+
 object Principal {
   def main(args: Array[String]): Unit = {
     val b = new Barca()
@@ -8,3 +10,4 @@ object Principal {
     pas.foreach(_.start())
   }
 }
+
