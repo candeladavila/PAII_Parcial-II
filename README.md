@@ -37,12 +37,12 @@ Este repositorio contiene enunciados, soluciones y recursos relacionados con ex�
 ---
 
 ## Examenes 2021
-- [ ] Junio
-- [ ] Septiembre
+- [x] Junio
+- [x] Septiembre (Pendiente revisión sincronización cuando se crea un nuevo proceso en la segunda iteración)
 
 ---
 
 ## Examenes 2022
-- [x] Junio (pendiente revisión método PermanenteAtiendeCliente)
+- [x] Junio (Pendiente revisión método PermanenteAtiendeCliente, nunca atiende)
 - [x] Septiembre
 
