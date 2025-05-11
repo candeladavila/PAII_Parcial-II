@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# IntelliJ / JetBrains
+.idea/
+*.iml
+
+# Scala / sbt / bloop
+.bsp/
+.metals/
+.project/
+.target/
+.ensime
+.ensime_cache/
+
+# Logs y archivos temporales
+*.log
+*.tmp
+*.swp
+*~
+
+# Archivos generados
+out/
+bin/
+classes/
