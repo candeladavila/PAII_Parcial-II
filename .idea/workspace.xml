@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2a7ce20-abb1-40fb-98f9-9ca9406b2f22" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Enunciado.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Esqueleto.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Examen Resuelto/Barca.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Examen Resuelto/Capitan.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Examen Resuelto/Pasajero.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/2020/Junio 2020/Examen Resuelto/Principal.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/2022/Junio_2022/Examen_Resuelto/SupermercadoSemaforos.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/2022/Junio_2022/Examen_Resuelto/SupermercadoSemaforos.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-3.3.6/classes/2020/Junio 2020/Enunciado.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-3.3.6/classes/2020/Junio 2020/Esqueleto.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-3.3.6/classes/Supermercado/SupermercadoSemaforos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-3.3.6/classes/Supermercado/SupermercadoSemaforos.tasty" beforeDir="false" />
-    </list>
+    <list default="true" id="c2a7ce20-abb1-40fb-98f9-9ca9406b2f22" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +139,7 @@
       <workItem from="1746778085877" duration="24289000" />
       <workItem from="1746899132886" duration="16719000" />
       <workItem from="1746961574936" duration="692000" />
-      <workItem from="1746987214887" duration="2126000" />
+      <workItem from="1746987214887" duration="2471000" />
     </task>
     <servers />
   </component>
