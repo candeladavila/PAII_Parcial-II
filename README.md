@@ -31,7 +31,7 @@ Este repositorio contiene enunciados, soluciones y recursos relacionados con ex√
 ---
 
 ## Examenes 2020
-- [ ] Junio
+- [x] Junio
 - [ ] Septiembre
 
 ---
