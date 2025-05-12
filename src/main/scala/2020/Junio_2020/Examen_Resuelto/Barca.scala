@@ -1,12 +1,39 @@
 package Barco
+import java.util.concurrent.*
+
 class Barca {
+
+  //VARIABLES
+  private val capacidadBarco = 3 //información del enunciado
+  private var orilla = 1 //inicialmente la barca está al norte (norte = 1, sur = 0)
+  private var nViajeros = 0 //inicialmente no hay pasajeros en la barca
+  private val mutex = new Semaphore(1) //controla el acceso a nViajeros
+  private val puertaEntrada = new Semaphore(1) //inicialmente se puede entrar
+  private val puertaSalida = new Semaphore(0) //inicialmente nadie puede salir
+  private val inicioViaje = new Semaphore(0) //inicialmente no hay viajes iniciados
+  private val finalViaje = new Semaphore(0) //inicialmente no hay viajes finalizados
 
   /*
    * El Pasajero id quiere darse una vuelta en la barca desde la orilla pos
    */
   @throws[InterruptedException]
   def subir(id: Int, pos: Int): Unit = {
-    // TODO
+    puertaEntrada.acquire()
+    mutex.acquire()
+    if (orilla == pos) { //si está en su orilla se sube
+      nViajeros += 1
+      println(s"Viajero $id se sube al barco en la orilla $orilla")
+      if (nViajeros < capacidadBarco){ //aún queda espacio en el barco
+        puertaEntrada.release()
+        mutex.release()
+      } else{ //si es el último pasajero en entrar al barco (lo llena)
+        inicioViaje.release()
+        mutex.release()
+      }
+    } else{
+      puertaEntrada.release() //deja paso a otro viajero
+      mutex.release()
+    }
   }
 
   /*
@@ -14,8 +41,18 @@ class Barca {
    */
   @throws[InterruptedException]
   def bajar(id: Int): Int = {
-    // TODO
-    0 // valor de retorno ficticio
+    puertaSalida.acquire()
+    mutex.acquire()
+    nViajeros -= 1 //sale un viajero
+    println(s"Viajero $id baja del barco en la orilla $orilla")
+    if (nViajeros > 0){ //siguen quedando viajeros
+      puertaSalida.release()
+      mutex.release()
+    } else{ //es el último viajero
+      puertaEntrada.release()
+      mutex.release()
+    }
+    orilla //devuelve la orilla
   }
 
   /*
@@ -23,7 +60,9 @@ class Barca {
    */
   @throws[InterruptedException]
   def esperoSuban(): Unit = {
-    // TODO
+    inicioViaje.acquire()
+    println("Empieza el viaje!!!")
+    finalViaje.release()
   }
 
   /*
@@ -31,7 +70,12 @@ class Barca {
    */
   @throws[InterruptedException]
   def finViaje(): Unit = {
-    // TODO
+    finalViaje.acquire()
+    mutex.acquire()
+    orilla = (orilla+1)%2 //cambiamos la orilla
+    println("Fin del viaje!!!")
+    puertaSalida.release()
+    mutex.release()
   }
 
 }
