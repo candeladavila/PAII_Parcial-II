@@ -58,11 +58,11 @@ class Tren {
         puertaSalida.release()
       }
       else {
-        println("**************************+")
+        println("***************************")
         puertaEntrada.release()
       } //numPas == 0 -> no quedan pasajeros -> nuevo viaje
-      mutex.release()
     }
+    mutex.release()
   }
 
   @throws[InterruptedException]
