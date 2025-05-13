@@ -8,32 +8,28 @@ class Barca {
   private var orilla = 1 //inicialmente la barca está al norte (norte = 1, sur = 0)
   private var nViajeros = 0 //inicialmente no hay pasajeros en la barca
   private val mutex = new Semaphore(1) //controla el acceso a nViajeros
-  private val puertaEntrada = new Semaphore(1) //inicialmente se puede entrar
+  private val puertaEntrada = new Array[Semaphore](2) //creamos un array con dos semáforos (0 = sur, 1 = norte)
   private val puertaSalida = new Semaphore(0) //inicialmente nadie puede salir
   private val inicioViaje = new Semaphore(0) //inicialmente no hay viajes iniciados
   private val finalViaje = new Semaphore(0) //inicialmente no hay viajes finalizados
-
+  puertaEntrada(1).release()
   /*
    * El Pasajero id quiere darse una vuelta en la barca desde la orilla pos
    */
   @throws[InterruptedException]
   def subir(id: Int, pos: Int): Unit = {
-    puertaEntrada.acquire()
+    puertaEntrada(pos).acquire() //miramos el semáforo que corresponda a nuestra orilla
     mutex.acquire()
-    if (orilla == pos) { //si está en su orilla se sube
-      nViajeros += 1
-      println(s"Viajero $id se sube al barco en la orilla $orilla")
-      if (nViajeros < capacidadBarco){ //aún queda espacio en el barco
-        puertaEntrada.release()
-        mutex.release()
-      } else{ //si es el último pasajero en entrar al barco (lo llena)
-        inicioViaje.release()
-        mutex.release()
-      }
-    } else{
-      puertaEntrada.release() //deja paso a otro viajero
+    nViajeros += 1
+    println(s"Viajero $id se sube al barco en la orilla $orilla")
+    if (nViajeros < capacidadBarco){ //aún queda espacio en el barco
+      puertaEntrada(pos).release()
+      mutex.release()
+    } else{ //si es el último pasajero en entrar al barco (lo llena)
+      inicioViaje.release()
       mutex.release()
     }
+
   }
 
   /*

@@ -59,7 +59,7 @@ class SupermercadoSemaforos extends Supermercado {
       mutex.acquire()
       nClientes += 1
       println(s"Llega cliente $id. Hay $nClientes clientes.")
-      while (Cajero.numCajerosActivos() < (nClientes + 2) / 3) {
+      if (Cajero.numCajerosActivos() < (nClientes + 2) / 3) {
         val ocasional = new Cajero(this, false)
         ocasional.start()
         println(s"Se crea un cajero nuevo ${Cajero.numCajerosActivos()}")

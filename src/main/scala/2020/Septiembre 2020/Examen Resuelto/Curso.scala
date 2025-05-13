@@ -13,7 +13,7 @@ class Curso {
   private val mutex1 = new Semaphore(1) //acesso a la variable alumnosIniciacion
   private val mutex2 = new Semaphore(1) //acceso a la variable ALUMNOS_AV
   private val inicioIniciacion = new Semaphore(1) //inicialmente se puede entrar a iniciación
-  private val finIniciacion = new Semaphore(0) //inicialmente nadie termina iniciación
+  private val finIniciacion = new Semaphore(0) //inicialmente nadie termina iniciación //SOBRA
   private val esperaAvanzada = new Semaphore(0) //inicialmente nadie empieza avanzada
   private val esperaGrupo = new Semaphore(1) //inicialmente no hay ningún grupo
   private val inicioProyecto = new Semaphore(0) //inicialmente no hay ningún proyecto empezado en avanzada
@@ -43,7 +43,7 @@ class Curso {
     alumnosIniciacion -= 1 //termina iniciación y deja su plaza libre
     // Mensaje a mostrar para indicar que el alumno ha terminado la parte de principiantes
     println(s"PARTE INICIACION: Alumno $id termina parte iniciacion")
-    // Libera la conexión para que otro alumno pueda usarla
+    // Libera la conexión pAlumno.scalaara que otro alumno pueda usarla
     inicioIniciacion.release()
     mutex1.release()
     // Inicia el proceso de espera para la plaza de avanzada

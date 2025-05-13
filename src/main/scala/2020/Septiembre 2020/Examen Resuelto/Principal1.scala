@@ -1,4 +1,4 @@
-object Principal {
+object Principal1 {
   def main(args: Array[String]): Unit = {
     // Número total de alumnos que realizarán el curso
     val NUMALUMNOS = 15

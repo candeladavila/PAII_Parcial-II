@@ -1,3 +1,4 @@
+
 import scala.util.Random
 
 class Alumno(id: Int, curso: Curso) extends Thread {
