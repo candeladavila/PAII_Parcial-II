@@ -7,11 +7,11 @@ class Barca {
   private var orilla = 1 //inicialmente la barca está al norte (norte = 1, sur = 0)
   private var nViajeros = 0 //inicialmente no hay pasajeros en la barca
   private val mutex = new Semaphore(1) //controla el acceso a nViajeros
-  private val puertaEntrada = new Array[Semaphore](2) //creamos un array con dos semáforos (0 = sur, 1 = norte)
+  private val puertaEntrada = Array.fill(2)(new Semaphore(0)) // inicializa ambos con 0 semáforos
   private val puertaSalida = new Semaphore(0) //inicialmente nadie puede salir
   private val inicioViaje = new Semaphore(0) //inicialmente no hay viajes iniciados
   private val finalViaje = new Semaphore(0) //inicialmente no hay viajes finalizados
-  puertaEntrada(1).release()
+  puertaEntrada(1).release() //inicialmente el semáforo del norte está abierto
   /*
    * El Pasajero id quiere darse una vuelta en la barca desde la orilla pos
    */
@@ -20,15 +20,13 @@ class Barca {
     puertaEntrada(pos).acquire() //miramos el semáforo que corresponda a nuestra orilla
     mutex.acquire()
     nViajeros += 1
-    println(s"Viajero $id se sube al barco en la orilla $orilla")
+    println(s"Viajero $id se sube al barco en la orilla $pos")
     if (nViajeros < capacidadBarco){ //aún queda espacio en el barco
       puertaEntrada(pos).release()
-      mutex.release()
     } else{ //si es el último pasajero en entrar al barco (lo llena)
       inicioViaje.release()
-      mutex.release()
     }
-
+    mutex.release()
   }
 
   /*
@@ -44,6 +42,7 @@ class Barca {
       puertaSalida.release()
       mutex.release()
     } else{ //es el último viajero
+      println("**********************************************")
       puertaEntrada(orilla).release()
       mutex.release()
     }
