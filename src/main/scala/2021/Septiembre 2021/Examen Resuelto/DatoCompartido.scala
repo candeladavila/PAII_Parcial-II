@@ -16,12 +16,8 @@ class DatoCompartido(private val nProcesadores: Int) {
    */
 
   //VARIABLES
-  private val mutex = new Semaphore(1) //semáforo para controlar las variables dato y procPend
-  private val generar = new Semaphore(1) // 1 = genera -> 0 = procesa
-  private val finProcesamiento = new Semaphore(0) //inicialmente no hay ningún procesamiento terminado
-  private val leerDato = new Semaphore(0) //inicialmente no se puede leer ningún dato
-  private val procesarDato = new Semaphore(0) //inicialmente no se puede procesar ningún dato
-  private val procesadoresUsados: mutable.Buffer[Int] = new ArrayBuffer[Int]()
+  private val mutex_dato = new Semaphore(1) //mutex sobre la variable dato
+  private val mutex_proc = new Semaphore(0)
 
   /**
    * El Generador utiliza este método para almacenar un nuevo dato a procesar.
@@ -35,23 +31,9 @@ class DatoCompartido(private val nProcesadores: Int) {
    */
 
   def generaDato(d: Int): Int = {
-    generar.acquire()
-    mutex.acquire()
-    dato = d //nuevo dato
     println(s"Dato a procesar: $dato")
-    procPend = nProcesadores //reiniciamos el contador de procesadores
-    procesadoresUsados.clear() //reiniciamos los procesadores
     println(s"Número de procesadores pendientes: $procPend")
-    //INICIO PROCESAMIENTO
-    leerDato.release() //liberamos los procesadores
-    mutex.release()
-    //FIN PROCESAMIENTO
-    finProcesamiento.acquire()
-    mutex.acquire()
-    val resultado = dato
-    generar.release() //volvemos a generar un dato
-    mutex.release()
-    resultado
+    0
   }
 
   /**
@@ -64,9 +46,7 @@ class DatoCompartido(private val nProcesadores: Int) {
    * CS2_Procesador: espera a que el dato esté disponible para procesarlo.
    */
   def leeDato(id: Int): Int = {
-    leerDato.acquire()
-    procesarDato.release()
-    dato
+    0
   }
 
   /**
@@ -76,25 +56,6 @@ class DatoCompartido(private val nProcesadores: Int) {
    * (2) Si él era el último procesador avisará al Generador de que han terminado.
    */
   def actualizaDato(id: Int, datoActualizado: Int): Unit = {
-    procesarDato.acquire()
-    mutex.acquire()
-    if (!procesadoresUsados.contains(id)) { //EL PROCESADOR NO HA PROCESADO ANTES
-      println(s"\tProcesador $id ha procesado el dato. Nuevo dato: $datoActualizado")
-      dato = datoActualizado
-      procPend -= 1
-      procesadoresUsados += id
-      println(s"Número de procesadores pendientes: $procPend")
-      if (procPend == 0) {
-        finProcesamiento.release()
-      } else {
-        leerDato.release()
-      }
-      mutex.release()
-    } else { //EL PROCESADOR YA HABÍA PROCESADO
-      if (procPend != 0){
-        leerDato.release()
-      }
-      mutex.release()
-    }
+
   }
 }
