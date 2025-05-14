@@ -2,7 +2,6 @@ package Barco
 import scala.util.Random
 
 class Capitan(barca: Barca) extends Thread {
-
   private val r = new Random()
 
   override def run(): Unit = {

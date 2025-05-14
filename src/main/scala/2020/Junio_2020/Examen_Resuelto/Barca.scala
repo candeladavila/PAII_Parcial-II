@@ -2,7 +2,6 @@ package Barco
 import java.util.concurrent.*
 
 class Barca {
-
   //VARIABLES
   private val capacidadBarco = 3 //información del enunciado
   private var orilla = 1 //inicialmente la barca está al norte (norte = 1, sur = 0)
@@ -45,7 +44,7 @@ class Barca {
       puertaSalida.release()
       mutex.release()
     } else{ //es el último viajero
-      puertaEntrada.release()
+      puertaEntrada(orilla).release()
       mutex.release()
     }
     orilla //devuelve la orilla
