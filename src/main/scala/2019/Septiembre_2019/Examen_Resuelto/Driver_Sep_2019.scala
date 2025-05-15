@@ -1,4 +1,4 @@
-object Driver {
+object Driver_Sep_2019 {
   def main(args: Array[String]): Unit = {
     val c = new Concurso()
     val b0 = new Jugador(0, c)

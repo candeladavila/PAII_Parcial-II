@@ -1,4 +1,5 @@
-object Principal {
+
+object Principal_Junio_2019 {
   def main(args: Array[String]): Unit = {
     val t = new Tiovivo(5)
     val o = new Operario(t)

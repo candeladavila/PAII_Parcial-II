@@ -2,7 +2,7 @@ package Supermercado
 
 import scala.util.Random
 
-object Driver {
+object Driver_Jun_2022 {
   def main(args: Array[String]): Unit = {
     val NC = 15
     val r = new Random()

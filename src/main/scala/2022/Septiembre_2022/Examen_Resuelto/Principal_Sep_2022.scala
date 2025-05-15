@@ -1,6 +1,6 @@
 package viajeTren
 
-object Principal {
+object Principal_Sep_2022 {
   def main(args: Array[String]): Unit = {
     val tren = new Tren()
     val m = new Maquinista(tren)

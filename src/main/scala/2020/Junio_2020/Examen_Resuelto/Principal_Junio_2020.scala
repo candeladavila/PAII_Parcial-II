@@ -1,6 +1,6 @@
 package Barco
 
-object Principal {
+object Principal_Junio_2020 {
   def main(args: Array[String]): Unit = {
     val b = new Barca()
     val p = new Capitan(b)

@@ -1,3 +1,4 @@
+
 class Operario(t: Tiovivo) extends Thread {
 
   override def run(): Unit = {

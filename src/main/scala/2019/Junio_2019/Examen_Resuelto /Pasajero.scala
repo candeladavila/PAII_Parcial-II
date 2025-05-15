@@ -1,3 +1,4 @@
+
 import scala.util.Random
 
 class Pasajero(id: Int, t: Tiovivo) extends Thread {
