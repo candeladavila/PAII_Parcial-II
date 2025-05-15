@@ -25,20 +25,20 @@ Este repositorio contiene enunciados, soluciones y recursos relacionados con ex�
 ---
 
 ## Examenes 2019
-- [ ] Junio
+- [x] Junio
 - [ ] Septiembre
 
 ---
 
 ## Examenes 2020
 - [x] Junio
-- [ ] Septiembre
+- [x] Septiembre
 
 ---
 
 ## Examenes 2021
 - [x] Junio
-- [x] Septiembre (Pendiente revisión sincronización cuando se crea un nuevo proceso en la segunda iteración)
+- [x] Septiembre
 
 ---
 
