@@ -7,7 +7,6 @@ class Concurso {
   private var juego = 1 //empezamos en el juego 1
   private val mutex = new Semaphore(1)
   private val esperaOtroJugador = new Semaphore(0)
-  private val finConcurso = new Semaphore(0)
   private var termina = false //Variable booleana para ver si el concurso ha temrminado o no
 
   @throws[InterruptedException]
