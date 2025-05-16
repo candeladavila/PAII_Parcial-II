@@ -26,7 +26,7 @@ Este repositorio contiene enunciados, soluciones y recursos relacionados con ex√
 
 ## Examenes 2019
 - [x] Junio
-- [ ] Septiembre
+- [x] Septiembre
 
 ---
 
