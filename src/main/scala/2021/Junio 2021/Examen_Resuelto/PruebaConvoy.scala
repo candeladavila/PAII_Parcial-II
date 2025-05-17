@@ -7,5 +7,4 @@ object PruebaConvoy {
     //iniciamos la flota con las 10 furgonetas
     flota.foreach(_.start())
   }
-
 }
